@@ -14,7 +14,6 @@ class TestArrs(unittest.TestCase):
     def test_get__empty_list(self):
         with self.assertRaises(IndexError):
             get([], 0)
-            get([], 1)
 
     def test_slice(self):
         self.assertEqual(arrs.my_slice([1, 2, 3, 4], 1, 3), [2, 3])
@@ -34,6 +33,9 @@ class TestArrs(unittest.TestCase):
         self.assertEqual(arrs.my_slice([1, 2, 3, 4, 5], 10, 10), [])
         self.assertEqual(arrs.my_slice([1, 2, 3, 4, 5], -10, -10), [])
         self.assertEqual(arrs.my_slice([1, 2, 3, 4, 5], 1, None), [2, 3, 4, 5])
+        self.assertEqual(arrs.my_slice([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
+        self.assertEqual(arrs.my_slice(['1', '2', '3', '4', '5']), ['1', '2', '3', '4', '5'])
+        self.assertEqual(arrs.my_slice([]), [])
 
     def test_get__test_slice(self):
         with self.assertRaises(TypeError):
